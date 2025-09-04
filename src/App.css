@@ -1,0 +1,366 @@
+/* Variables CSS personalizadas */
+:root {
+  --primary: #3b82f6;
+  --primary-hover: #2563eb;
+  --success: #10b981;
+  --success-hover: #059669;
+  --warning: #f59e0b;
+  --warning-hover: #d97706;
+  --danger: #ef4444;
+  --danger-hover: #dc2626;
+  --dark-bg: #0f172a;
+  --dark-surface: #1e293b;
+  --dark-surface-hover: #334155;
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --border: #334155;
+  --border-hover: #475569;
+}
+
+/* Clases de utilidad para colores */
+.text-primary { color: var(--text-primary) !important; }
+.text-secondary { color: var(--text-secondary) !important; }
+.text-muted { color: var(--text-muted) !important; }
+.bg-primary { background-color: var(--primary) !important; }
+.bg-primary-hover { background-color: var(--primary-hover) !important; }
+.bg-success { background-color: var(--success) !important; }
+.bg-success-hover { background-color: var(--success-hover) !important; }
+.bg-warning { background-color: var(--warning) !important; }
+.bg-warning-hover { background-color: var(--warning-hover) !important; }
+.bg-danger { background-color: var(--danger) !important; }
+.bg-danger-hover { background-color: var(--danger-hover) !important; }
+.bg-muted { background-color: var(--text-muted) !important; }
+.border-border { border-color: var(--border) !important; }
+.border-border-hover { border-color: var(--border-hover) !important; }
+.text-danger { color: var(--danger) !important; }
+.text-danger-hover { color: var(--danger-hover) !important; }
+.text-success { color: var(--success) !important; }
+.text-warning { color: var(--warning) !important; }
+.icon-primary { color: var(--primary) !important; }
+.icon-success { color: var(--success) !important; }
+.icon-warning { color: var(--warning) !important; }
+.icon-danger { color: var(--danger) !important; }
+
+/* Estilos personalizados para la aplicación de Timer */
+
+/* Animación para el timer cuando está activo */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.6);
+  }
+}
+
+/* Estilos para estados del timer */
+.timer-active {
+  animation: pulse 2s infinite;
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+}
+
+.timer-paused {
+  opacity: 0.8;
+  box-shadow: 0 0 15px rgba(245, 158, 11, 0.3);
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(16, 185, 129, 0.3); }
+  50% { box-shadow: 0 0 30px rgba(16, 185, 129, 0.5); }
+}
+
+/* Estilos para los botones con efectos hover mejorados */
+button {
+  transition: all 0.2s ease-in-out;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* Estilos para el select personalizado */
+select {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23cbd5e1' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 0.5rem center;
+  background-repeat: no-repeat;
+  background-size: 1.5em 1.5em;
+  padding-right: 2.5rem;
+  background-color: #1e293b;
+  color: #f8fafc;
+  border: 1px solid #334155;
+}
+
+select:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Mejoras en las tarjetas de proyecto */
+.project-card {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--success));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-card:hover::before {
+  opacity: 1;
+}
+
+/* Estilos para el resumen total */
+.summary-card {
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  border: 1px solid #475569;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.summary-card h2 {
+  color: #f8fafc;
+}
+
+/* Estilos para el formulario */
+.form-input {
+  background-color: #1e293b;
+  color: #f8fafc;
+  border: 1px solid #334155;
+}
+
+.form-input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  background-color: #1e293b;
+}
+
+.form-input::placeholder {
+  color: #94a3b8;
+}
+
+/* Mejoras en el timer display */
+.timer-display {
+  text-shadow: 0 0 10px rgba(248, 250, 252, 0.3);
+  letter-spacing: 2px;
+}
+
+.timer-display.timer-active {
+  text-shadow: 0 0 15px rgba(16, 185, 129, 0.5);
+}
+
+.timer-display.timer-paused {
+  text-shadow: 0 0 10px rgba(245, 158, 11, 0.4);
+}
+
+/* Estilos para los detalles de sesiones */
+.session-details {
+  max-height: 200px;
+  overflow-y: auto;
+  background-color: #0f172a;
+  border-radius: 8px;
+  padding: 0.5rem;
+}
+
+.session-details::-webkit-scrollbar {
+  width: 6px;
+}
+
+.session-details::-webkit-scrollbar-track {
+  background: #1e293b;
+  border-radius: 3px;
+}
+
+.session-details::-webkit-scrollbar-thumb {
+  background: #475569;
+  border-radius: 3px;
+}
+
+.session-details::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+/* Estilos para el estado activo del timer */
+.timer-running {
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  border: 1px solid #3b82f6;
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
+}
+
+.timer-running .timer-display {
+  color: #3b82f6;
+  text-shadow: 0 0 15px rgba(59, 130, 246, 0.7);
+}
+
+/* Estilos para los botones de acción */
+.action-button {
+  min-width: 120px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Estilos para el responsive */
+@media (max-width: 768px) {
+  .timer-display {
+    font-size: 2.5rem !important;
+  }
+  
+  .action-button {
+    min-width: 100px;
+    font-size: 0.875rem;
+  }
+}
+
+/* Estilos para las animaciones de entrada */
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Estilos para los badges de estado */
+.status-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: 1px solid;
+}
+
+.status-active {
+  background-color: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+  border-color: #10b981;
+}
+
+.status-paused {
+  background-color: rgba(245, 158, 11, 0.1);
+  color: #f59e0b;
+  border-color: #f59e0b;
+}
+
+.status-stopped {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+  border-color: #ef4444;
+}
+
+/* Estilos para inputs y textareas */
+input, textarea {
+  background-color: #1e293b;
+  color: #f8fafc;
+  border: 1px solid #334155;
+  border-radius: 6px;
+}
+
+input:focus, textarea:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  outline: none;
+}
+
+/* Estilos para el modal */
+.modal-overlay {
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(4px);
+}
+
+.modal-content {
+  background: linear-gradient(145deg, #1e293b 0%, #334155 100%);
+  border: 1px solid #475569;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* Estilos para las estadísticas */
+.stat-card {
+  background: linear-gradient(145deg, #1e293b 0%, #334155 100%);
+  border: 1px solid #334155;
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  border-color: #475569;
+  transform: translateY(-1px);
+}
+
+/* Estilos para el texto */
+.text-primary {
+  color: #f8fafc;
+}
+
+.text-secondary {
+  color: #cbd5e1;
+}
+
+.text-muted {
+  color: #94a3b8;
+}
+
+/* Estilos para los iconos */
+.icon-primary {
+  color: #3b82f6;
+}
+
+.icon-success {
+  color: #10b981;
+}
+
+.icon-warning {
+  color: #f59e0b;
+}
+
+.icon-danger {
+  color: #ef4444;
+}
+
+/* Estilos para el gradiente de fondo */
+.gradient-bg {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+  min-height: 100vh;
+}
